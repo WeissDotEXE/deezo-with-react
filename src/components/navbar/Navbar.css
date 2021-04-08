@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.navigationBar {
+  position: fixed;
+  display: inline-block;
+  background-color: #3282b8;
+  height: 100vh;
+  width: 5.8vw;
+  text-align: center;
+}
+
+.navigationBar h3 {
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.navigationBar ul {
+  left: 3px;
+  margin: 0px;
+  border: 0px;
+  padding: 0%;
+  margin-top: 3rem;
+}
+
+.navigationBar ul li {
+  margin-top: 5rem;
+}
+
+.navigationBar i {
+  font-size: 2rem;
+  color: white;
+}
+
+.navigationBar p {
+  color: white;
+}
+
+.navigationBar #darkModeBtn {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  margin: auto;
+  text-align: center;
+  background-color: transparent;
+}
+/*# sourceMappingURL=Navbar.css.map */
