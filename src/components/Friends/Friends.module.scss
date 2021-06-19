@@ -1,0 +1,28 @@
+@import "../variables.scss";
+
+.friends {
+  background: $secondary_color;
+  box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 22px;
+  padding: $padding_left_right;
+  position: relative;
+  padding-top: 30px;
+  margin-top: 10%; //position of menu section(maybe change for mobile)
+  max-width: 100%;
+  .friends_list {
+      max-width: 100%;
+      text-align: center;
+      display: flex;
+      overflow-x: auto;
+      font-family: $font;
+      p{
+          padding: 5px;
+          font-family: $font;
+          font-weight: 700;
+      }
+  }
+}
+
+#no_friends_txt{
+    color: rgb(146, 146, 146);
+}

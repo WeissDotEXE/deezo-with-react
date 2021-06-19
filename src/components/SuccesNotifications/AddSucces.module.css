@@ -1,0 +1,9 @@
+.addSucces_notification {
+  background-color: black;
+  z-index: 100;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  top: 0;
+}
+/*# sourceMappingURL=AddSucces.module.css.map */

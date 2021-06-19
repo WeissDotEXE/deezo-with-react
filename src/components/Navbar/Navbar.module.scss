@@ -1,0 +1,41 @@
+@import '../variables.scss';
+
+.navbar{
+    background-color:$primary_color;
+    width: 100vw;
+    height: 10vh;
+    position: fixed;
+    bottom: 0;
+    z-index: 200;
+    .navbar_btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0px;
+        position: relative;
+        h1{
+            margin-top: -18px;
+            font-size: 3.5vw;  //needs to be changed for mobile
+            border-radius: 10px;
+            font-family: $font;
+            font-weight:700;
+        }
+        .navbar_link{
+            transition: 0.3s;
+            margin-top: 10px;
+            text-decoration: none;
+            color: $primary_text_color;
+            font-family: $font;
+            font-weight: 600;
+            margin: 0% 4% 0% 4%;
+            font-size: $links_font_size;  //needs to be changed for mobile
+            margin-top: 10px;
+        }
+        .navbar_link:hover{
+            color: black;
+            transition: 0.3s;
+            border-top: 30;
+        }
+    }
+}

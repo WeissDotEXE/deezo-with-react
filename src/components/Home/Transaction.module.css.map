@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,YAAY,CAAC;EACX,UAAU,ECAK,OAAO;EDCtB,UAAU,EAAE,GAAG,CAAC,GAAG,CAAC,IAAI,CAAC,GAAG,CAAC,kBAAkB;EAC/C,aAAa,EAAE,IAAI;EACnB,OAAO,ECFW,GAAG,CAAC,EAAE,CAAC,GAAG,CAAC,EAAE;EDG/B,QAAQ,EAAE,QAAQ;EAClB,WAAW,EAAE,IAAI;EACjB,cAAc,EAAE,IAAI;EACpB,UAAU,EAAE,GAAG;CAChB",
+    "sources": [
+        "Transaction.module.scss",
+        "../variables.scss"
+    ],
+    "names": [],
+    "file": "Transaction.module.css"
+}

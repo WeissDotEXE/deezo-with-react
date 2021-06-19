@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,uBAAuB,CAAA;EACnB,gBAAgB,EAAE,KAAK;EACvB,OAAO,EAAE,GAAG;EACZ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,GAAG;EACX,QAAQ,EAAE,QAAQ;EAClB,GAAG,EAAE,CAAC;CACT",
+    "sources": [
+        "AddSucces.module.scss",
+        "../variables.scss"
+    ],
+    "names": [],
+    "file": "AddSucces.module.css"
+}

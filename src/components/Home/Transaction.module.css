@@ -1,0 +1,12 @@
+.transaction {
+  background: #0F4C75;
+  -webkit-box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 22px;
+  padding: 0px 6% 0px 6%;
+  position: relative;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  margin-top: 10%;
+}
+/*# sourceMappingURL=Transaction.module.css.map */

@@ -1,0 +1,42 @@
+@import "../variables.scss";
+
+body{
+  background: fixed;
+}
+.home_menu {
+  background: $secondary_color;
+  box-shadow: 0px 4px 20px 4px rgba(0, 0, 0, 0.6);
+  border-radius: 22px;
+  padding: $padding_left_right;
+  position: relative;
+  padding-top: 30px;
+  margin-top: 10%; //position of menu section(maybe change for mobile)
+  #amount {
+    padding: 20px 0px 20px 0px;
+  }
+  .menu_btn_section {
+    height: 100%;
+    padding: 30px 0px 30px 0px;
+    font-size: 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    button{
+        transition: 0.4s;
+        background: $primary_color;
+        border-radius: 10px;
+        color: $primary_text_color;
+        border: 0;
+        padding:15px 30px 15px 30px;
+        font-size: 1.4vw;
+        font-family: $font;
+        font-weight: 600;
+        margin: 0px 15px 0px 0px;
+    }
+    button:hover{
+        transition: 0.4s;
+        background: black;
+        padding-left: 50px;  //maybe need to be changed?
+        padding-right: 2%;
+    }
+  }
+}
