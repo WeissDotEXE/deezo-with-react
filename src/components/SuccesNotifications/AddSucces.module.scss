@@ -1,10 +1,26 @@
 @import '../variables.scss';
 
 .addSucces_notification{
-    background-color: black;
+    background-color: #23C552;
     z-index: 100;
-    width: 50%;
-    height: 50%;
-    position: absolute;
-    top: 0;
+    width: 25%;
+    height: 15%;
+    position: fixed;
+    top: 60%;
+    right: 0;
+    border-radius: 10px;
+    p{
+        text-align: center;
+        position:relative;
+        top: 30%;
+    }
+    .loading_bar{
+        width: 100%;
+        position: absolute;
+        bottom: 0%;
+        left: 0%;
+        margin: auto;
+        height: 10px;
+        background-color: rgb(255, 255, 255);
+    }
 }

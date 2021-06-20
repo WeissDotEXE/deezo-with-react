@@ -26,6 +26,8 @@ const AddFriend = (props) => {
           <label>Friend's name</label>
           <input
             type="text"
+            minlength="3"
+            maxLength="8"
             required
             placeholder="John"
             value={friendName}

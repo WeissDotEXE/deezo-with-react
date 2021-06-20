@@ -1,9 +1,27 @@
 .addSucces_notification {
-  background-color: black;
+  background-color: #23C552;
   z-index: 100;
-  width: 50%;
-  height: 50%;
+  width: 25%;
+  height: 15%;
+  position: fixed;
+  top: 60%;
+  right: 0;
+  border-radius: 10px;
+}
+
+.addSucces_notification p {
+  text-align: center;
+  position: relative;
+  top: 30%;
+}
+
+.addSucces_notification .loading_bar {
+  width: 100%;
   position: absolute;
-  top: 0;
+  bottom: 0%;
+  left: 0%;
+  margin: auto;
+  height: 10px;
+  background-color: white;
 }
 /*# sourceMappingURL=AddSucces.module.css.map */

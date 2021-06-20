@@ -2,12 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./AddMoney.module.scss";
 import AddSucces from "../SuccesNotifications/AddSucces";
 const AddMoney = (props) => {
+
+  const addTransactions=[];
+
+
   const [enteredMoney, setEnteredMoney] = useState("");
   const [enteredCurrency, setEnteredCurrency] = useState("");
   const [succesNotification, setSuccesNotification] = useState(false);
   const [converted, setConverted] = useState("");
-
+  const [transactionData,setTransactionData]=useState(addTransactions);
   useEffect(() => { console.log(converted); }, [converted])
+
 
   const moneyChangeHandler = (event) => {
     setEnteredMoney(event.target.value);
@@ -26,8 +31,20 @@ const AddMoney = (props) => {
     }
   };
 
+  //condition for showing succes notification
+
   const submitHandler = (e) => {
     e.preventDefault();
+
+    //data which will be passed to Home.js component
+    const addData={
+      type:'Add',
+      amount:converted
+    }
+
+    //this function will pass the "addData" object to Home.js component
+    props.onSaveConverted(addData);
+    setSuccesNotification(true);
     setEnteredMoney("");
     setEnteredCurrency("");
   };
@@ -40,7 +57,7 @@ const AddMoney = (props) => {
 
       <div className={styles.content}>
         <h1 id={styles.addMoney_txt}>Add Money</h1>
-        <form onSubmit={props.submitHandler}>
+        <form onSubmit={submitHandler}>
           <label>How much you want to deposit</label>
           <input
             type="number"
@@ -62,6 +79,7 @@ const AddMoney = (props) => {
             <option value="euro">Euro €</option>
             <option value="ron">Romanian Leu</option>
           </select>
+          <h6>Converted amount: {converted}</h6>
           <button type="submit">Add Money</button>
         </form>
       </div>

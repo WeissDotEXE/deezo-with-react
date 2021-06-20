@@ -1,13 +1,17 @@
 import {useState} from 'react';
 import styles from './Friends.module.scss';
-import Card from '../Cards/Cards';
-const Friends=()=>{
+const Friends=(props)=>{
     
-    let empthy_list=[]
-    const [friendsList,setFriendsList]=useState(empthy_list);
+    const [friendsList,setFriendsList]=useState([]);
 
-    let friend_avatar=<p id={styles.no_friends_txt}>It seems like you haven't added friends yet.</p>;
-
+    let friend_avatar=null;
+    
+    if(friendsList.length===0){
+        friend_avatar=<p id={styles.no_friends_txt}>It seems like you haven't added friends yet.</p>
+    }
+    else if(friendsList.length>0){
+        friend_avatar=<p>{props.friend}</p>
+    }
 
     return(
         <div className={styles.friends}>
