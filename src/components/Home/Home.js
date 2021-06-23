@@ -7,6 +7,7 @@ import AddMoney from "./AddMoney";
 import AddFriend from "./AddFriend";
 import Friends from "../Friends/Friends";
 import AddSucces from "../SuccesNotifications/AddSucces";
+import SendMoney from "./SendMoney";
 
 const transactions=[];
 const friends=[];
@@ -15,6 +16,7 @@ const Home = () => {
   const [addMoneyShow, setAddMoneyShow] = useState(false);
   const [addFriendShow,setAddFriendShow]=useState(false);
   const [sendShow,setSendShow]=useState(false);
+  const [sendMoneyShow,setSendMoneyShow]=useState(false);
   //variable for total money which will be shown in Menu component
   const [money,setMoney]=useState(0);
 
@@ -27,17 +29,25 @@ const Home = () => {
   const addMoneyHandler = () => {
     setAddMoneyShow(true);
     setAddFriendShow(false);
+    setSendMoneyShow(false);
   };
   //handler for "add friend" button
   const addFriendHandler=()=>{
     setAddMoneyShow(false);
     setAddFriendShow(true);
+    setSendMoneyShow(false);
   }
-  
+  //handler for "send money" button
+  const sendMoneyHandler=()=>{
+    setAddMoneyShow(false);
+    setAddFriendShow(false);
+    setSendMoneyShow(true);
+  }
+
   const closeHandler=()=>{
     setAddMoneyShow(false);
     setAddFriendShow(false);
-
+    setSendMoneyShow(false);
   }
 
   //handler for uplifting state from AddMoney component
@@ -52,23 +62,36 @@ const Home = () => {
     console.log(transactions);
   }
 
+  //handler for uplifting state from SendMoney component
+  const saveSendHandler=(enteredSendData)=>{
+    transactions.unshift(enteredSendData);
+    totalMoney-=parseFloat(enteredSendData.amount);
+    setMoney(totalMoney.toFixed(2));
+    setSendMoneyShow(false);
+
+  }
+
   const saveFriendhandler=(enteredFriendData)=>{
     friends.unshift(enteredFriendData);
     setAddFriendShow(false);
+    setTimeout(function(){ setSendShow(false) }, 3000);
+    console.log(friends);
   }
 
   //conditions for displaying content from menu buttons
   if(addMoneyShow===true){
     widget=<AddMoney closeHandler={closeHandler} onSaveConverted={saveConvertedHandler}/>
   }
-
   if(addFriendShow===true){
-    widget=<AddFriend closeHandler={closeHandler}/>
+    widget=<AddFriend onSaveConverted={saveFriendhandler} closeHandler={closeHandler}/>
+  }
+  if(sendMoneyShow===true){
+    widget=<SendMoney friend={friends} maxMoney={totalMoney} onSaveSend={saveSendHandler} closeHandler={closeHandler}/>
   }
 
   //conditions for showing notification(add money widget)
   if(sendShow===true){
-    addSuccesNotification=<AddSucces money={transactions[0]}/>
+    addSuccesNotification=<AddSucces money={transactions[0].amount}/>
 
   }
 
@@ -76,8 +99,13 @@ const Home = () => {
   return (
     <div className={styles.home}>
       <div className={styles.content}>
-        <HomeMenu totalMoney={money} addMoneyHandler={addMoneyHandler} addFriendHandler={addFriendHandler}/>
-        <Friends />
+
+        <HomeMenu totalMoney={money} 
+        addMoneyHandler={addMoneyHandler} 
+        addFriendHandler={addFriendHandler}
+        sendMoneyHandler={sendMoneyHandler}
+        />
+        <Friends friend={friends} />
         <Transaction transaction={transactions}/>
         
         {addSuccesNotification}

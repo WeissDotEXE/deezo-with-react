@@ -31,6 +31,10 @@ const AddMoney = (props) => {
     }
   };
 
+  //variables showing time when user added money
+  let today=new Date();
+  let time=today.getDate() + '-' + (today.getMonth()+1) + '-'+ (today.getFullYear());
+
   //condition for showing succes notification
 
   const submitHandler = (e) => {
@@ -39,7 +43,9 @@ const AddMoney = (props) => {
     //data which will be passed to Home.js component
     const addData={
       type:'Add',
-      amount:converted
+      amount:converted,
+      time: time,
+      id: Math.floor(Math.random()*100)
     }
 
     //this function will pass the "addData" object to Home.js component

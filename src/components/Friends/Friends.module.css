@@ -7,11 +7,12 @@
   position: relative;
   padding-top: 30px;
   margin-top: 10%;
-  max-width: 100%;
 }
 
 .friends .friends_list {
+  text-align: center;
   max-width: 100%;
+  padding: 10px;
   text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -21,12 +22,13 @@
 }
 
 .friends .friends_list p {
-  padding: 5px;
+  padding: 0px 10px 0px 0px;
   font-family: "Lato", sans-serif;
   font-weight: 700;
+  text-align: center;
 }
 
-#no_friends_txt {
-  color: #929292;
+.friends .friends_list i {
+  font-size: 30px;
 }
 /*# sourceMappingURL=Friends.module.css.map */

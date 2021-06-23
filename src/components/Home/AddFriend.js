@@ -8,9 +8,14 @@ const AddFriend = (props) => {
     setFriendName(event.target.value);
   };
 
+  const addData={
+    name:friendName,
+    id: Math.floor(Math.random()*100)
+  }
+
   const submitHandler = (e) => {
     e.preventDefault();
-    alert(friendName);
+    props.onSaveConverted(addData);
     setFriendName("");
   };
 
