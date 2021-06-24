@@ -15,7 +15,7 @@ const AddFriend = (props) => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    props.onSaveConverted(addData);
+    props.onSaveFriend(addData);
     setFriendName("");
   };
 

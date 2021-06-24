@@ -13,6 +13,7 @@
         text-align: center;
         position:relative;
         top: 30%;
+        font-size: 20px;
     }
     .loading_bar{
         width: 0%;
@@ -22,5 +23,6 @@
         margin: auto;
         height: 10px;
         background-color: rgb(255, 255, 255);
+        border-radius: 0px 0px 10px 10px;
     }
 }

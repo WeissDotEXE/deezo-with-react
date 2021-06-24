@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import styles from "./AddMoney.module.scss";
-import AddSucces from "../SuccesNotifications/AddSucces";
 const AddMoney = (props) => {
 
   const addTransactions=[];

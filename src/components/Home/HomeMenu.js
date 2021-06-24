@@ -5,7 +5,7 @@ const HomeMenu = (props) => {
 
   return (
     <div className={styles.home_menu}>
-      <h1>Hello fname last (props)</h1>
+      <h1>Hello {props.userFirstName} {props.userLastName}</h1>
       <h1 id={styles.amount}>{props.totalMoney} $</h1>
       <div className={styles.menu_btn_section}>
         <button className="glow" id={styles.add_money_btn} onClick={props.addMoneyHandler}>Add Money <i class="fas fa-wallet"></i></button>

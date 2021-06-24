@@ -1,0 +1,70 @@
+.createProfile {
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  z-index: 20;
+  height: 100vh;
+  width: 100%;
+  background-color: #1B262C;
+  color: white;
+}
+
+.createProfile .content {
+  padding: 0px 6% 0px 6%;
+  margin-top: 10%;
+}
+
+.createProfile .content h1 {
+  font-size: 55px;
+  margin-bottom: 8%;
+}
+
+.createProfile .content form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Lato", sans-serif;
+}
+
+.createProfile .content form label {
+  font-size: 35px;
+  font-weight: 600;
+}
+
+.createProfile .content form input {
+  padding: 10px;
+  border-radius: 10px;
+  border: 0px;
+}
+
+.createProfile .content form input:focus {
+  outline: none;
+}
+
+.createProfile .content form button {
+  margin-top: 7%;
+  background: #3282B8;
+  border: 0px;
+  border-radius: 5px;
+  padding: 16px;
+  font-weight: 700;
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 25px;
+}
+
+.createProfile .rightImage img {
+  position: absolute;
+  right: 0;
+  width: 30%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+/*# sourceMappingURL=CreateProfile.module.css.map */
