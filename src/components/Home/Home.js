@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Home.module.scss";
-import IntroPage from "../Intro/IntroPage";
-
 import home_image from "../Images/home_image.jpg";
 import HomeMenu from "./HomeMenu";
 import Transaction from "./Transaction";
@@ -10,16 +8,17 @@ import AddFriend from "./AddFriend";
 import Friends from "../Friends/Friends";
 import Notification from "../Notifications/Notification";
 import SendMoney from "./SendMoney";
+import IntroPage from "../Intro/IntroPage";
 
-const transactions = [];
-const friends = [];
+const transactions = [""];
+const friends = [""];
 let totalMoney = 0;
+const userInfo=[];
 const Home = () => {
-  //variable for testing if user has created a profile
+
   const [isCompleted, setIsCompleted] = useState(false);
   const [firstName,setFirstName]=useState('');
   const [lastName,setLastName]=useState('');
-
 
   const [addMoneyShow, setAddMoneyShow] = useState(false);
   const [addFriendShow, setAddFriendShow] = useState(false);
@@ -31,73 +30,37 @@ const Home = () => {
 
   //variables which will store components and display them
   let widget = null; //this will display add money/friend/send section in right side of the screen as a widget
-  let notification = null;
+  let addSuccesNotification = null;
+  let loadedPage = null;
 
-  //handler for uplifting state from IntroPage component
-  const saveUserDataHandler=(enteredData)=>{
-    setFirstName(enteredData.firstName);
-    setLastName(enteredData.lastName);
-    setIsCompleted(true);
+  //condition for showing intro/create account page
+  if (isCompleted === false) {
+    loadedPage = <IntroPage />;
   }
   //handler for "add money" button
   const addMoneyHandler = () => {
     setAddMoneyShow(true);
     setAddFriendShow(false);
     setSendMoneyShow(false);
-    console.log("add Money clicked");
   };
   //handler for "add friend" button
   const addFriendHandler = () => {
     setAddMoneyShow(false);
     setAddFriendShow(true);
     setSendMoneyShow(false);
-    console.log("add Friend clicked");
   };
   //handler for "send money" button
   const sendMoneyHandler = () => {
     setAddMoneyShow(false);
     setAddFriendShow(false);
     setSendMoneyShow(true);
-    console.log("send Money clicked");
   };
 
-  //handler for closing any widget (close button in right top corner of)
   const closeHandler = () => {
     setAddMoneyShow(false);
     setAddFriendShow(false);
     setSendMoneyShow(false);
-    console.log("add Friend clicked");
   };
-
-
-  let pageTest = null;
-  if (isCompleted === false) {
-    pageTest = <IntroPage onSaveUserData={saveUserDataHandler}/>;
-  } else {
-    pageTest =<div className={styles.home}>
-        <div className={styles.content}>
-          <HomeMenu
-            totalMoney={money}
-            addMoneyHandler={addMoneyHandler}
-            addFriendHandler={addFriendHandler}
-            sendMoneyHandler={sendMoneyHandler}
-            userFirstName={firstName}
-            userLastName={lastName}
-          />
-          <Friends friend={friends} />
-          <Transaction transaction={transactions} />
-
-          {notification}
-        </div>
-
-        <div className={styles.image}>
-          <img id={styles.home_image} src={home_image} />
-        </div>
-
-        {widget}
-      </div>
-  }
-  
 
   //handler for uplifting state from AddMoney component
   const saveConvertedHandler = (enteredConvertedData) => {
@@ -120,20 +83,19 @@ const Home = () => {
     transactions.unshift(enteredSendData);
     totalMoney -= parseFloat(enteredSendData.amount);
     setMoney(totalMoney.toFixed(2));
-    setSendMoneyShow(false);
-    setNotificationType("sendMoney");
     setNotificationShow(true);
-    setTimeout(function () {
-      setNotificationShow(false);
-      setNotificationType("");
+    setNotificationType('sendMoney');
+    setTimeout(function(){
+      setNotificationShow(false)
+      setNotificationType("")
     }, 3000);
   };
 
+  //handler for uplifting state from AddFriend component
   const saveFriendhandler = (enteredFriendData) => {
     friends.unshift(enteredFriendData);
-    setAddFriendShow(false);
-    setNotificationType("addFriend");
     setNotificationShow(true);
+    setNotificationType("addFriend");
     setTimeout(function () {
       setNotificationShow(false);
       setNotificationType("");
@@ -168,17 +130,52 @@ const Home = () => {
 
   //conditions for showing notification(add money widget)
   if (notificationShow === true) {
-    notification = (
+    addSuccesNotification = (
       <Notification
         notificationType={notificationType}
         money={transactions[0].amount}
+        friend={friends[0].name}
       />
     );
   }
 
-  return(
+  const saveUserDataHandler=(enteredData)=>{
+    setFirstName(enteredData.firstName);
+    setLastName(enteredData.lastName);
+    setIsCompleted(true);
+  }
+
+
+  let content=null;
+  if(isCompleted===false){
+    content=<IntroPage onSaveUserData={saveUserDataHandler}/>
+  }
+  else{
+    content=<div className={styles.home}>
+    <div className={styles.content}>
+      <HomeMenu
+        totalMoney={money}
+        addMoneyHandler={addMoneyHandler}
+        addFriendHandler={addFriendHandler}
+        sendMoneyHandler={sendMoneyHandler}
+        userFirstName={firstName}
+        userLastName={lastName}
+      />
+      <Friends friend={friends} />
+      <Transaction transaction={transactions} />
+      {addSuccesNotification}
+    </div>
+  
+    <div className={styles.image}>
+      <img id={styles.home_image} src={home_image} />
+    </div>
+  
+    {widget}
+  </div>
+  }
+  return (
     <div>
-      {pageTest}
+      {content}
     </div>
   );
 };

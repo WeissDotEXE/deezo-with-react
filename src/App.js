@@ -8,9 +8,6 @@ import IntroPage from "./components/Intro/IntroPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
-
-
-
   return(
     <Router>
       <div className="App">
@@ -20,7 +17,6 @@ const App = () => {
           <Route path="/cards" exact component={Cards} />
           <Route path="/profile" exact component={Profile} />
         </Switch>
-        
       </div>
     </Router>
   );

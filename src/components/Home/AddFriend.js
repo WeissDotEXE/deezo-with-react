@@ -32,7 +32,7 @@ const AddFriend = (props) => {
           <input
             type="text"
             minlength="3"
-            maxLength="8"
+            maxLength="12"
             required
             placeholder="John"
             value={friendName}
