@@ -3,6 +3,13 @@ import styles from "./Navbar.module.scss";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+
+  const deleteDataHandler=()=>{
+    sessionStorage.setItem('formCompleted',true);
+    localStorage.clear();
+    window.location.reload();
+  }
+
   return (
     <div className={styles.navbar}>
       <div className={styles.navbar_btn}>
@@ -18,6 +25,7 @@ const Navbar = () => {
             <i class="fas fa-user"></i>
             <p>Profile</p>
         </Link>
+        <button onClick={deleteDataHandler} id={styles.delete_data_btn}>Delete user</button>
       </div>
     </div>
   );

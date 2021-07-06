@@ -1,1 +1,64 @@
-/* No CSS *//*# sourceMappingURL=Profile.module.css.map */
+body {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+.profile {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+
+.profile .background {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.profile .background img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  -webkit-filter: brightness(60%);
+          filter: brightness(60%);
+}
+
+.profile .content {
+  z-index: 3;
+}
+
+.profile .image {
+  z-index: 3s;
+}
+
+.error_page {
+  background-color: #1B262C;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.error_page .error_page_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #F2F4F7;
+  margin-left: -25px;
+}
+/*# sourceMappingURL=Profile.module.css.map */

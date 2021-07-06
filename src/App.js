@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import Cards from "./components/Cards/Cards";
@@ -8,7 +8,8 @@ import IntroPage from "./components/Intro/IntroPage";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 const App = () => {
-  return(
+
+  return (
     <Router>
       <div className="App">
         <Navbar />
@@ -20,6 +21,6 @@ const App = () => {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

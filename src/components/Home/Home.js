@@ -13,11 +13,12 @@ import IntroPage from "../Intro/IntroPage";
 const transactions = [""];
 const friends = [""];
 let totalMoney = 0;
-const userInfo=[];
+sessionStorage.setItem('formCompleted',false);
 const Home = () => {
-
-  const [isCompleted, setIsCompleted] = useState(false);
-  const [firstName,setFirstName]=useState('');
+  
+  let isCompleted=sessionStorage.getItem('formCompleted');
+  
+  const [firstName,setFirstName]=useState(sessionStorage.getItem('userFirstName'));
   const [lastName,setLastName]=useState('');
 
   const [addMoneyShow, setAddMoneyShow] = useState(false);
@@ -31,12 +32,7 @@ const Home = () => {
   //variables which will store components and display them
   let widget = null; //this will display add money/friend/send section in right side of the screen as a widget
   let addSuccesNotification = null;
-  let loadedPage = null;
 
-  //condition for showing intro/create account page
-  if (isCompleted === false) {
-    loadedPage = <IntroPage />;
-  }
   //handler for "add money" button
   const addMoneyHandler = () => {
     setAddMoneyShow(true);
@@ -142,15 +138,15 @@ const Home = () => {
   const saveUserDataHandler=(enteredData)=>{
     setFirstName(enteredData.firstName);
     setLastName(enteredData.lastName);
-    setIsCompleted(true);
+    // setIsCompleted(true);
   }
 
 
   let content=null;
-  if(isCompleted===false){
+  if(isCompleted==='false'){
     content=<IntroPage onSaveUserData={saveUserDataHandler}/>
   }
-  else{
+  else if(isCompleted==='true'){
     content=<div className={styles.home}>
     <div className={styles.content}>
       <HomeMenu

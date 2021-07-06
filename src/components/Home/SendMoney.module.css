@@ -52,6 +52,11 @@
   width: 100%;
 }
 
+.sendMoney .content input:focus {
+  outline: none;
+  border: 2px solid black;
+}
+
 .sendMoney .content .select select {
   border: 2px solid grey;
   border-radius: 10px;
@@ -61,6 +66,11 @@
   font-family: "Lato", sans-serif;
   width: 100%;
   margin-bottom: 20%;
+}
+
+.sendMoney .content .select select:focus {
+  outline: none;
+  border: 2px solid black;
 }
 
 .sendMoney .content #submit_btn {

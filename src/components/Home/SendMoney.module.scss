@@ -37,6 +37,10 @@
       border: 2px solid grey;
       width: 100%;
     }
+    input:focus{
+      outline:none;
+      border: 2px solid black;
+    }
     .select {
       select {
         border: 2px solid grey;
@@ -47,6 +51,10 @@
         font-family: $font;
         width: 100%;
         margin-bottom: 20%;
+      }
+      select:focus{
+        outline: none;
+        border:2px solid black;
       }
     }
     #submit_btn{

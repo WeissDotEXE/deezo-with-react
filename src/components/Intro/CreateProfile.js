@@ -1,16 +1,23 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './CreateProfile.module.scss';
 import photo from '../Images/create_profile_img.jpg';
-import parseJson from 'parse-json';
 const CreateProfile=(props)=>{
 
-    const [fName,setFName]=useState('');
+    const [fName,setFName]=useState('jjs');
     const [lName,setLName]=useState('');
     const [email,setEmail]=useState('');
-
+    const [formCompleted,setformCompleted]=useState(false);
+    //this is used for saving user data in session storage to be displayed on profile Component too
+    useEffect(() => {
+        sessionStorage.setItem('userFirstName',fName);
+        sessionStorage.setItem('userLastName',lName);
+        sessionStorage.setItem('userEmail',email);
+        sessionStorage.setItem('formCompleted',formCompleted);
+      });
 
     const fnameChangeHandler=(event)=>{
         setFName(event.target.value);
+        
     }
     const lnameChangeHandler=(event)=>{
         setLName(event.target.value);
@@ -28,7 +35,9 @@ const CreateProfile=(props)=>{
 
     const submitHandler=(e)=>{
         e.preventDefault();
+        setformCompleted(true);
         props.onSaveUserData(userData);
+        sessionStorage.setItem("formCompleted",true);
         console.log(userData);
     }
     return(
