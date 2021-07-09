@@ -49,4 +49,16 @@
   transition: 0.3s;
   border-top: 30;
 }
+
+.navbar .navbar_btn #delete_data_btn {
+  position: absolute;
+  right: 0;
+  margin-right: 5%;
+  margin-bottom: 1.2%;
+  background: transparent;
+  border: 3px solid white;
+  padding: 8px;
+  border-radius: 10px;
+  color: #F2F4F7;
+}
 /*# sourceMappingURL=Navbar.module.css.map */

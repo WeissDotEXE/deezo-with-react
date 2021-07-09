@@ -31,10 +31,24 @@ body {
 
 .profile .content {
   z-index: 3;
+  position: absolute;
+  font-size: 8vw;
+  width: 60%;
+  top: 45%;
+  left: 35%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .profile .image {
-  z-index: 3s;
+  z-index: 3;
+  color: gray;
+  position: absolute;
+  font-size: 10vw;
+  top: 45%;
+  right: 15%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 
 .error_page {

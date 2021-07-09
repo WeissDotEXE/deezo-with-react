@@ -1,1 +1,6 @@
-/* No CSS *//*# sourceMappingURL=Cards.module.css.map */
+.cards {
+  background-color: #1B262C;
+  width: 100%;
+  height: 100vh;
+}
+/*# sourceMappingURL=Cards.module.css.map */

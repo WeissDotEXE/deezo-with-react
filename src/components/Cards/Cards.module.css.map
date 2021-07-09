@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,MAAM,CAAA;EACF,gBAAgB,ECDF,OAAO;EDErB,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,KAAK;CAChB",
     "sources": [
-        "Cards.module.scss"
+        "Cards.module.scss",
+        "../variables.scss"
     ],
     "names": [],
     "file": "Cards.module.css"
