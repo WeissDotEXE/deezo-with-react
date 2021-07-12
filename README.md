@@ -4,11 +4,12 @@ I was inspired by Revolut app after realizing that it does not have a desktop ve
 
   In Deezo, user can do the following things:
   1. create an account
-  2.deposit money
+  2. deposit money
   3. adding friends
   4. sending money to friends
   5. generating a random card with different styles (black , white and transparent)
   6. see transaction history (adding and sending money)
+  7. converting money (from USD/Euro/Ron to USD)
 
   I used React Js for this project due to following reasons:
   1. it is faster than vanilla Javascript to develop
