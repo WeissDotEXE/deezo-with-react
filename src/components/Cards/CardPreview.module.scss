@@ -1,0 +1,17 @@
+@import '../variables.scss';
+
+.CardPreview{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 50%;
+    top:20%;
+    justify-content: center;
+    align-items: center;
+    #cardPreview_txt{
+        color: $primary_text_color;
+        margin-top: -10%;
+        margin-bottom: 10%;
+        font-weight: 700;
+    }
+}

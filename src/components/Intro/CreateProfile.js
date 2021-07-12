@@ -7,11 +7,15 @@ const CreateProfile=(props)=>{
     const [lName,setLName]=useState('');
     const [email,setEmail]=useState('');
     const [formCompleted,setformCompleted]=useState(false);
+
+    let today=new Date();
+    let date=today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear()+' '+today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();;
     //this is used for saving user data in session storage to be displayed on profile Component too
     useEffect(() => {
         sessionStorage.setItem('userFirstName',fName);
         sessionStorage.setItem('userLastName',lName);
         sessionStorage.setItem('userEmail',email);
+        sessionStorage.setItem('accountDate',date);
         sessionStorage.setItem('formCompleted',formCompleted);
       });
 

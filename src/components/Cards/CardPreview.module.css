@@ -1,1 +1,26 @@
-/* No CSS *//*# sourceMappingURL=CardPreview.module.css.map */
+.CardPreview {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  width: 50%;
+  top: 20%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.CardPreview #cardPreview_txt {
+  color: #F2F4F7;
+  margin-top: -10%;
+  margin-bottom: 10%;
+  font-weight: 700;
+}
+/*# sourceMappingURL=CardPreview.module.css.map */

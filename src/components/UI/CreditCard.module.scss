@@ -1,35 +1,62 @@
-@import '../variables.scss';
+@import "../variables.scss";
 
-.CreditCard{
-    background-color: white;
-    width: 65%;
-    height: 38vh;
-    padding: 15px;
-    position: relative;
-    font-family: $font;
-    border-radius: 20px;
-    box-shadow: 0px 6px 10px 10px rgba(0, 0, 0, 0.5);
-    h1{
-        font-size: 2.5vw;
-        font-weight: 800;
+.CreditCard {
+  background-color: white;
+  width: 65%;
+  height: 38vh;
+  padding: 15px;
+  position: relative;
+  font-family: $font;
+  border-radius: 20px;
+  box-shadow: 0px 6px 10px 10px rgba(0, 0, 0, 0.5);
+  margin:20px;
+  h1 {
+    font-size: 2.5vw;
+    font-weight: 800;
+  }
+  p {
+    font-weight: 600;
+    font-size: 1.5vw;
+  }
+  #card_number {
+    margin-top: 10%;
+  }
+  .bottom_info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 20px 0px 20px;
+    margin: 0px;
+    i{
+      font-size: 3.5vw;
+      margin-bottom: 20%;
     }
-    p{
-        font-weight: 600;
-        font-size: 1.5vw;
+    .expr_and_type{
+      p{
+        margin-right: 23px;
+      }
     }
-    #card_number{
-        margin-top: 10%;
-    }
-    .bottom_info{
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        padding: 0px 20px 0px 20px;
-        margin: 0px;
-    }
+  }
+}
+.CreditCard.Transparent {
+  background: linear-gradient(
+    179.82deg,
+    rgba(207, 207, 207, 0.5) 0.16%,
+    rgba(207, 207, 207, 0) 99.84%
+  );
+  color: #B6B0B0;
+  backdrop-filter: blur(30px);
+}
+.CreditCard.White {
+  background-color: white;
+  color:black;
+}
+.CreditCard.Black {
+  background-color: black;
+  color: white;
 }

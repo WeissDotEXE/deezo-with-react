@@ -48,6 +48,9 @@ body {
   position: relative;
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .error_page_content {
     display: flex;
     flex-direction: column;
@@ -55,5 +58,23 @@ body {
     align-items: center;
     color: $primary_text_color;
     margin-left: -25px;
+    i{
+      font-size: 4vw;
+      color: red;
+    }
+    button{
+      transition: 0.4s;
+      padding: 10px;
+      border: transparent;
+      font-size: 2vw;
+      font-weight: 600;
+      background: $primary_color;
+      color: $primary_text_color;
+    }
+    button:hover{
+      transition: 0.4s;
+      padding: 10px 60px 10px 60px;
+      background: black;
+    }
   }
 }

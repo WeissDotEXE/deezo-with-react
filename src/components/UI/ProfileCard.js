@@ -5,6 +5,7 @@ const ProfileCard=(props)=>{
     const [firstName,setFirstName]=useState(sessionStorage.getItem('userFirstName'));
     const [lastName,setLastName]=useState(sessionStorage.getItem('userLastName'));
     const [email,setEmail]=useState(sessionStorage.getItem('userEmail'));
+    const [accountDate,setAccountDate]=useState(sessionStorage.getItem('accountDate'));
 
     return(
         <div className={styles.card}>
@@ -13,7 +14,7 @@ const ProfileCard=(props)=>{
                 <p>First name: {firstName}</p>
                 <p>Last name: {lastName}</p>
                 <p>email: {email}</p>
-                <p>account created: props</p>
+                <p>account created: {accountDate}</p>
             </div>
         </div>
     );

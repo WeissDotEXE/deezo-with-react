@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AAEA,AAAA,YAAY,CAAA;EACR,OAAO,EAAE,IAAI;EACb,cAAc,EAAE,MAAM;EACtB,QAAQ,EAAE,QAAQ;EAClB,KAAK,EAAE,GAAG;EACV,GAAG,EAAC,GAAG;EACP,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;CAOtB;;AAdD,AAQI,YARQ,CAQR,gBAAgB,CAAA;EACZ,KAAK,ECVO,OAAO;EDWnB,UAAU,EAAE,IAAI;EAChB,aAAa,EAAE,GAAG;EAClB,WAAW,EAAE,GAAG;CACnB",
     "sources": [
-        "CardPreview.module.scss"
+        "CardPreview.module.scss",
+        "../variables.scss"
     ],
     "names": [],
     "file": "CardPreview.module.css"

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import styles from "./Profile.module.scss";
 import ProfileCard from "../UI/ProfileCard";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 const Profile = () => {
   // const [formCompleted, setformCompleted] = useState(
   //   sessionStorage.getItem("formCompleted")
   // );
-  let formCompleted=sessionStorage.getItem("formCompleted");
+  let formCompleted = sessionStorage.getItem("formCompleted");
 
   let content = null;
   if (formCompleted === "true") {
@@ -23,10 +23,11 @@ const Profile = () => {
         </div>
       </div>
     );
-  } else if(formCompleted==="false"){
+  } else if (formCompleted === "false") {
     content = (
       <div className={styles.error_page}>
         <div className={styles.error_page_content}>
+          <i class="fas fa-exclamation"></i>
           <h1>It seems that you did not create an account</h1>
           <Link to="/">
             <button id={styles.redirect_btn}>Create Account</button>
