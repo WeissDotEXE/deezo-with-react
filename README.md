@@ -21,10 +21,10 @@ The major problems that I faced when creating this web app was passing data from
 
 
 HOW TO INSTALL the project:
-1.install NodeJs
-2.Download the Code
-3.In terminal , run 'npm install'
-4.In terminal, run 'npm start'
+  1.install NodeJs
+  2.Download the Code
+  3.In terminal , run 'npm install'
+  4.In terminal, run 'npm start'
 
 Tutorials that I used to create this web app:
 Udemy Course: https://www.udemy.com/course/react-the-complete-guide-incl-redux/
