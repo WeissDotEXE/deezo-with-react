@@ -6,9 +6,9 @@ import CreditCard from "../UI/CreditCard";
 
 const cardList = [];
 const Cards = () => {
-  const [cardExist, setCardExist] = useState(false);
+  const [cardExist, setCardExist] = useState(sessionStorage.getItem('cardExist'));
   const [showGenerate, setShowGenerate] = useState(false);
-  const [cardsList, setCardsList] = useState(cardList);
+  // const [cardsList, setCardsList] = useState(cardList);
 
   //variables for showing content if user already has a card or not
   let content = null;
@@ -19,7 +19,7 @@ const Cards = () => {
     setShowGenerate(true);
   };
 
-  if (cardExist === false) {
+  if (cardExist === 'false') {
     content = (
       <div className={styles.noCard}>
         <i class="fas fa-exclamation"></i>
@@ -27,7 +27,7 @@ const Cards = () => {
         <button onClick={generateCardHandler}>Generate card</button>
       </div>
     );
-  } else if (cardExist === true) {
+  } else if (cardExist === 'true') {
     content = (
       <div className={styles.cards}>
         <div className={styles.background}>
@@ -60,7 +60,8 @@ const Cards = () => {
   const saveGenerateCardHandler = (enteredData) => {
     cardList.unshift(enteredData);
     console.log(cardList);
-    setCardExist(true);
+    sessionStorage.setItem('cardExist',true);
+    setCardExist('true');
     setShowGenerate(false);
   };
 

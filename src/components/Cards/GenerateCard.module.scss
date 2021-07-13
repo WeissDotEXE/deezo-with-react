@@ -45,11 +45,12 @@
         border: 2px solid $primary_color;
       }
       button{
-        position: relative;
-        top: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 25%;
+        margin-bottom: 5%;
         width: 50%;
-        margin: auto;
-        padding: 15px;
+        padding: 5%;
         font-family:$font;
         font-weight: 600;
         background: $primary_color;
@@ -61,7 +62,6 @@
       button:hover{
         transition: 0.4s;
         background-color: black;
-        width: 100%;
       }
     }
   }

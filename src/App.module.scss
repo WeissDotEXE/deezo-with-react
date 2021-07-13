@@ -1,0 +1,24 @@
+@import './components/variables.scss';
+.mobileError{
+    display: none;
+}
+@media only screen and (max-width:1000px){
+    .App{
+        display: none;
+    }
+    .mobileError{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background:$background_color;
+        width: 100%;
+        height: 100vh;
+        color: $primary_text_color;
+        text-align: center;
+        padding: 0px 10px 0px 10px;
+        i{
+            font-size: 40px;
+        }
+    }
+}

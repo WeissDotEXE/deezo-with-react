@@ -17,6 +17,7 @@ const CreateProfile=(props)=>{
         sessionStorage.setItem('userEmail',email);
         sessionStorage.setItem('accountDate',date);
         sessionStorage.setItem('formCompleted',formCompleted);
+        sessionStorage.setItem('cardExist',false);
       });
 
     const fnameChangeHandler=(event)=>{
