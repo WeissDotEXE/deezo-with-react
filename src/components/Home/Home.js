@@ -80,6 +80,7 @@ const Home = () => {
     totalMoney -= parseFloat(enteredSendData.amount);
     setMoney(totalMoney.toFixed(2));
     setNotificationShow(true);
+    setSendMoneyShow(false);
     setNotificationType('sendMoney');
     setTimeout(function(){
       setNotificationShow(false)
@@ -92,6 +93,7 @@ const Home = () => {
     friends.unshift(enteredFriendData);
     setNotificationShow(true);
     setNotificationType("addFriend");
+    setAddFriendShow(false);
     setTimeout(function () {
       setNotificationShow(false);
       setNotificationType("");
